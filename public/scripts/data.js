@@ -1,31 +1,30 @@
-var $div = $('<div></div>');
-var $p = $('<p></p>');
-var $li = $('<li></li>');
-var $br = $('<br/>');
+var $cdTitle = $('<div></div>');
 
-var $cdTitle = $div;
-$cdTitle.append($p.text('ミライトアルマチ詩恩'));
-$cdTitle.append($p.text('keisei feat. 初音ミク'));
+$cdTitle.append($('<p></p>').text('ミライトアルマチ詩恩'));
+$cdTitle.append($('<p></p>').text('keisei feat. 初音ミク'));
 
-var $tracks = $div;
-$tracks.append($li.text('ゆめアップロード'));
-$tracks.append($li.text('birthday'));
-$tracks.append($li.text('saku*life (shion mix)'));
-$tracks.append($li.text('#cityelectronic - OUTLINE'));
-$tracks.append($li.text('アリスインフューチャーシティ'));
-$tracks.append($li.text('superexpress'));
-$tracks.append($li.text('#cityelectronic - inaka'));
-$tracks.append($li.text('highway_lamp'));
-$tracks.append($li.text('findscape'));
-$tracks.append($li.text('君にあえたこと'));
+var $tracks = $('<div></div>');
 
-var $events = $div;
-$events.append($p.text('M3-2017春'));
-$events.append($p.text('THE VOC@LOiD 超 M@STER 37'));
+$tracks.append($('<li></li>').text('ゆめアップロード'));
+$tracks.append($('<li></li>').text('birthday'));
+$tracks.append($('<li></li>').text('saku*life (shion mix)'));
+$tracks.append($('<li></li>').text('#cityelectronic - OUTLINE'));
+$tracks.append($('<li></li>').text('アリスインフューチャーシティ'));
+$tracks.append($('<li></li>').text('superexpress'));
+$tracks.append($('<li></li>').text('#cityelectronic - inaka'));
+$tracks.append($('<li></li>').text('highway_lamp'));
+$tracks.append($('<li></li>').text('findscape'));
+$tracks.append($('<li></li>').text('君にあえたこと'));
 
-var $thanks = $div;
-$thanks.append($p.text('MikuMikuDance by Higuchi M'));
-$thanks.append($p.text('AutoLuminous4 by Soboro'));
-$thanks.append($p.text('Hatsune Miku 1052 C-Re Model by Hakutory'));
+var $events = $('<div></div>');
+
+$events.append($('<p></p>').text('M3-2017春'));
+$events.append($('<p></p>').text('THE VOC@LOiD 超 M@STER 37'));
+
+var $thanks = $('<div></div>');
+
+$thanks.append($('<p></p>').text('MikuMikuDance by Higuchi M'));
+$thanks.append($('<p></p>').text('AutoLuminous4 by Soboro'));
+$thanks.append($('<p></p>').text('Hatsune Miku 1052 C-Re Model by Hakutory'));
 
 var $info = [$cdTitle, $tracks, $events, $thanks];

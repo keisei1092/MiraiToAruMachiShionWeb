@@ -1,7 +1,9 @@
-function handleScrollDown() {
-
+function handleScrollDown(callback) {
+  nextInfo();
+  callback();
 }
 
-function handleScrollUp() {
-
+function handleScrollUp(callback) {
+  previousInfo();
+  callback();
 }
