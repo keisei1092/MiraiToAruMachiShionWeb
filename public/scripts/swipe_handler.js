@@ -1,9 +1,9 @@
 // http://qiita.com/Wataru/items/a9548015e00683e142e4
 
 $(function() {
-  $('#main').on('touchstart', onTouchStart); //指が触れたか検知
-  $('#main').on('touchmove', onTouchMove); //指が動いたか検知
-  $('#main').on('touchend', onTouchEnd); //指が離れたか検知
+  $('#wrapper').on('touchstart', onTouchStart); //指が触れたか検知
+  $('#wrapper').on('touchmove', onTouchMove); //指が動いたか検知
+  $('#wrapper').on('touchend', onTouchEnd); //指が離れたか検知
   var direction, position;
 
   //スワイプ開始時の横方向の座標を格納
