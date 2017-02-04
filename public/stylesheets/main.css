@@ -53,7 +53,11 @@ li {
   list-style-type: none;
 }
 
-.fill {
+#wrapper {
+  position: relative;
+}
+
+.vertical-fill {
   height: 100%;
   min-height: 100%;
 }
@@ -95,4 +99,36 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.low-margin {
+  margin: 8px;
+}
+
+.petit {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.table-cell-center {
+  text-align: center;
+  vertical-align: middle;
 }

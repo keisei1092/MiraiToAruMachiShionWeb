@@ -1,19 +1,19 @@
 var page = 0;
 
-function nextInfo(direction) {
+function nextInfo() {
   if (page == $info.length - 1) {
     return;
   }
   page++;
-  repaint(direction);
+  repaint("down");
 }
 
-function previousInfo(direction) {
+function previousInfo() {
   if (page == 0) {
     return;
   }
   page--;
-  repaint(direction);
+  repaint("up");
 }
 
 function repaint(direction) {
@@ -23,7 +23,6 @@ function repaint(direction) {
   var transisionAfter;
 
   if (direction == "up") {
-    console.log('up');
     transitionBefore = {
       'margin-top': '50px',
       'opacity': 0
@@ -33,7 +32,6 @@ function repaint(direction) {
       'opacity': 1
     };
   } else {
-    console.log('down');
     transitionBefore = {
       'padding-bottom': '100px',
       'opacity': 0
@@ -45,21 +43,26 @@ function repaint(direction) {
   }
 
   $('#main').animate(transitionBefore, {
-    'duration': 600,
+    'duration': 750,
+    'easing': 'swing',
     'complete': function() {
       if (direction == "up") {
         $('#main').css('margin-top', '-50px');
-      } else {
-        $('#main').css('padding-bottom', '100px');
       }
       $('#main').html($info[page]);
-      $('#main').animate(transitionAfter);
+      $('#main').animate(transitionAfter, {
+        'duration': 750,
+        'easing': 'swing'
+      });
       canScroll = true;
     }
   });
 }
 
 $(document).on('ready', function() {
-  console.log('ready');
-  $('#main').html($info[page]);
+  $('body').hide(0).delay(500).fadeIn(500, function() {
+    $('#main').hide();
+    $('#main').html($info[page]);
+    $('#main').hide(0).delay(500).fadeIn(1000);
+  });
 });
