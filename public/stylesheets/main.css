@@ -54,6 +54,11 @@ li {
   list-style-type: none;
 }
 
+.fa {
+  opacity: 0.6;
+  text-shadow: 0px 2px 1px gray;
+}
+
 #wrapper {
   position: relative;
 }
@@ -120,6 +125,10 @@ li {
 
 .low-margin {
   margin: 8px;
+}
+
+.low-padding {
+  padding: 8px;
 }
 
 .petit {
