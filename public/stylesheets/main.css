@@ -36,6 +36,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+  letter-spacing: 0.2em;
 }
 
 /* IE10以上 */
@@ -63,7 +64,7 @@ li {
 }
 
 .background {
-  background-image: url('../images/background.png');
+  background-image: url('../images/background.jpg');
   background-size: cover;
 }
 
@@ -99,6 +100,12 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .bottom-right {
