@@ -82,7 +82,7 @@ function repaint(direction) {
 
 function recommendToRotate() {
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    $('#recommend-to-rotate').show().delay(5000).fadeOut(1000);
+    $('#recommend-to-rotate').show().delay(7500).fadeOut(1000);
   } else {
     $('#recommend-to-rotate').hide();
   }
