@@ -1,73 +1,36 @@
-// http://stackoverflow.com/questions/17131815/how-to-swipe-top-down-jquery-mobile
+// http://qiita.com/Wataru/items/a9548015e00683e142e4
 
-(function() {
-    var supportTouch = $.support.touch,
-            scrollEvent = "touchmove scroll",
-            touchStartEvent = supportTouch ? "touchstart" : "mousedown",
-            touchStopEvent = supportTouch ? "touchend" : "mouseup",
-            touchMoveEvent = supportTouch ? "touchmove" : "mousemove";
-    $.event.special.swipeupdown = {
-        setup: function() {
-            var thisObject = this;
-            var $this = $(thisObject);
-            $this.bind(touchStartEvent, function(event) {
-                var data = event.originalEvent.touches ?
-                        event.originalEvent.touches[ 0 ] :
-                        event,
-                        start = {
-                            time: (new Date).getTime(),
-                            coords: [ data.pageX, data.pageY ],
-                            origin: $(event.target)
-                        },
-                        stop;
+$(function() {
+  $('#main').on('touchstart', onTouchStart); //指が触れたか検知
+  $('#main').on('touchmove', onTouchMove); //指が動いたか検知
+  $('#main').on('touchend', onTouchEnd); //指が離れたか検知
+  var direction, position;
 
-                function moveHandler(event) {
-                    if (!start) {
-                        return;
-                    }
-                    var data = event.originalEvent.touches ?
-                            event.originalEvent.touches[ 0 ] :
-                            event;
-                    stop = {
-                        time: (new Date).getTime(),
-                        coords: [ data.pageX, data.pageY ]
-                    };
+  //スワイプ開始時の横方向の座標を格納
+  function onTouchStart(event) {
+    position = getPosition(event);
+    direction = ''; //一度リセットする
+  }
 
-                    // prevent scrolling
-                    if (Math.abs(start.coords[1] - stop.coords[1]) > 10) {
-                        event.preventDefault();
-                    }
-                }
-                $this
-                        .bind(touchMoveEvent, moveHandler)
-                        .one(touchStopEvent, function(event) {
-                    $this.unbind(touchMoveEvent, moveHandler);
-                    if (start && stop) {
-                        if (stop.time - start.time < 1000 &&
-                                Math.abs(start.coords[1] - stop.coords[1]) > 30 &&
-                                Math.abs(start.coords[0] - stop.coords[0]) < 75) {
-                            start.origin
-                                    .trigger("swipeupdown")
-                                    .trigger(start.coords[1] > stop.coords[1] ? "swipeup" : "swipedown");
-                        }
-                    }
-                    start = stop = undefined;
-                });
-            });
-        }
-    };
-    $.each({
-        swipedown: "swipeupdown",
-        swipeup: "swipeupdown"
-    }, function(event, sourceEvent){
-        $.event.special[event] = {
-            setup: function(){
-                $(this).bind(sourceEvent, $.noop);
-            }
-        };
-    });
+  //スワイプの方向（left／right）を取得
+  function onTouchMove(event) {
+    if (position - getPosition(event) > 70) { // 70px以上移動しなければスワイプと判断しない
+      direction = 'down';
+    } else if (position - getPosition(event) < -70){  // 70px以上移動しなければスワイプと判断しない
+      direction = 'up';
+    }
+  }
 
-})();
+  function onTouchEnd(event) {
+    if (direction == 'up'){
+      previousInfo();
+    } else if (direction == 'down'){
+       nextInfo();
+    }
+  }
 
-$('#wrapper').on('swipedown', function(){nextInfo('down');} );
-$('#wrapper').on('swipeup', function(){previousInfo('up');} );
+  //横方向の座標を取得
+  function getPosition(event) {
+    return event.originalEvent.touches[0].pageY;
+  }
+});
