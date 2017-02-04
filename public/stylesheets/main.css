@@ -73,8 +73,14 @@ li {
   background-size: cover;
 }
 
-.half-width {
+.responsive-half-width {
   width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    .responsive-half-width {
+        width: 100%;
+    }
 }
 
 .back-gray {
