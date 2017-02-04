@@ -12,6 +12,7 @@
   "dependencies": {
     "ejs": "2.4.1",
     "express": "4.13.3",
+    "jquery-touchswipe": "^1.6.15",
     "wheel-indicator": "^1.1.4"
   },
   "repository": {
