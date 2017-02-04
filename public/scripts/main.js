@@ -80,7 +80,16 @@ function repaint(direction) {
   });
 }
 
+function recommendToRotate() {
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    $('#recommend-to-rotate').show().delay(5000).fadeOut(1000);
+  } else {
+    $('#recommend-to-rotate').hide();
+  }
+}
+
 $(document).on('ready', function() {
+  recommendToRotate();
   $('body').hide(0).delay(500).fadeIn(500, function() {
     $('#main').hide();
     $('#main').html($currentType()[page]);
