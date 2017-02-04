@@ -1,7 +1,7 @@
 $(document).on('click', '#news', function() {
-  console.log('hoge');
+  changeType('news');
 });
 
 $(document).on('click', '#thoughts', function() {
-  console.log('hoge');
+  changeType('thoughts');
 });

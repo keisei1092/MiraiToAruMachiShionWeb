@@ -11,10 +11,10 @@ function $currentType() {
   }
 }
 
-function changeType(type) {
-  if (type == 'news') {
+function changeType(received) {
+  if (received == 'news') {
     type = type == 'news' ? 'default' : 'news';
-  } else if (type == 'thoughts') {
+  } else if (received == 'thoughts') {
     type = type == 'thoughts' ? 'default' : 'thoughts';
   }
   page = 0;
