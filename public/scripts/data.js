@@ -19,7 +19,7 @@ $tracks.append($('<li></li>').text('君にあえたこと'));
 var $events = $('<div></div>');
 
 $events.append($('<p></p>').text('M3-2017春'));
-$events.append($('<p></p>').text('第一展示場 O-20b'));
+$events.append($('<p></p>').text('（第一展示場 O-20b）'));
 $events.append($('<p></p>').text('THE VOC@LOiD 超 M@STER 37'));
 
 var $thanks = $('<div></div>');
