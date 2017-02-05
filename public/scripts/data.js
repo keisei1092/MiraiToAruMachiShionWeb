@@ -5,15 +5,15 @@ $cdTitle.append($('<p></p>').text('keisei feat. 初音ミク'));
 
 var $tracks = $('<div></div>');
 
-$tracks.append($('<li></li>').text('ゆめアップロード'));
-$tracks.append($('<li></li>').text('birthday'));
-$tracks.append($('<li></li>').text('saku*life (shion mix)'));
-$tracks.append($('<li></li>').text('#cityelectronic - OUTLINE'));
-$tracks.append($('<li></li>').text('アリスインフューチャーシティ'));
-$tracks.append($('<li></li>').text('superexpress'));
-$tracks.append($('<li></li>').text('#cityelectronic - inaka'));
-$tracks.append($('<li></li>').text('highway_lamp'));
-$tracks.append($('<li></li>').text('findscape'));
+$tracks.append($('<li class="song pointer blink" data-sound-source="yumeupload"></li>').text('ゆめアップロード'));
+$tracks.append($('<li class="song pointer" data-sound-source="birthday"></li>').text('birthday'));
+$tracks.append($('<li class="song pointer" data-sound-source="sakulife"></li>').text('saku*life (shion mix)'));
+$tracks.append($('<li class="song pointer" data-sound-source="outline"></li>').text('#cityelectronic - OUTLINE'));
+$tracks.append($('<li class="song pointer" data-sound-source="alice"></li>').text('アリスインフューチャーシティ'));
+$tracks.append($('<li class="song pointer" data-sound-source="superexpress"></li>').text('superexpress'));
+$tracks.append($('<li class="song pointer" data-sound-source="inaka"></li>').text('#cityelectronic - inaka'));
+$tracks.append($('<li class="song pointer" data-sound-source="highwaylamp"></li>').text('highway_lamp'));
+$tracks.append($('<li class="song pointer" data-sound-source="findscape"></li>').text('findscape'));
 $tracks.append($('<li></li>').text('君にあえたこと'));
 
 var $events = $('<div></div>');

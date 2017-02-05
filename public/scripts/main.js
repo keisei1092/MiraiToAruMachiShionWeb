@@ -12,6 +12,7 @@ function $currentType() {
 }
 
 function changeType(received) {
+  stopPlayer();
   if (received == 'news') {
     type = type == 'news' ? 'default' : 'news';
   } else if (received == 'thoughts') {
@@ -21,7 +22,14 @@ function changeType(received) {
   repaint('down');
 }
 
+function stopPlayer() {
+  $player = $('#player')[0];
+  $player.pause();
+  stopBlink();
+}
+
 function nextInfo() {
+  stopPlayer();
   if (page == $currentType().length - 1) {
     return;
   }
@@ -30,6 +38,7 @@ function nextInfo() {
 }
 
 function previousInfo() {
+  stopPlayer();
   if (page == 0) {
     return;
   }

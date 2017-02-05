@@ -31,6 +31,14 @@ li {
   display: none;
 }
 
+.blink {
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
 .absolute {
   position: absolute;
 }
@@ -58,6 +66,8 @@ li {
         width: 100%;
     }
 }
+
+
 
 .back-gray {
   background-color: gray;
